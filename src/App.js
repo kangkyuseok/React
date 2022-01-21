@@ -3,8 +3,23 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
 
+
+
+
+
+function App() {
+  const Menu = () => {
+    return (
+        <div>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/test.html">About</Link></li>
+            </ul>
+            <hr/>
+        </div>
+    );
+  };
   let [글제목,글제목변경] = useState(['역삼 맛집 추천', '고기 맛집 어디','강남 놀러 가자']);
   let [따봉, 따봉변경] = useState(0);
   let posts = '강남 고기 맛집';
@@ -37,6 +52,7 @@ function App() {
         <div className='list'>
         <h3>{글제목[1]}</h3>
         <p> 2020-01-19</p>
+        <a href='public/index'>ㅇㅇㅇ</a>
         <hr/>
         </div> 
         <div className='list'>
@@ -44,8 +60,20 @@ function App() {
         <p> 2020-01-19</p>
         <hr/>
         </div>  
+        <Modal/>
     </div>
   );
+}
+   
+
+function Modal(){
+  return (
+    <div className='modal'>
+      <h2>제목</h2>
+          <p>제목</p>
+          <p>상세내용</p>
+    </div>
+  )
 }
 
 export default App;
